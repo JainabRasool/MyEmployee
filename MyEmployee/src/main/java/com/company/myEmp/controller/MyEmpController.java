@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.company.myEmp.Entity.MyEmpEntity;
+
 import com.company.myEmp.dto.MyEmpRequest;
 import com.company.myEmp.service.MyEmpService;
 
@@ -22,9 +22,7 @@ public class MyEmpController {
 
 	@Autowired
 	MyEmpService empService;
-	@Autowired
-	MyEmpEntity empEntity;
-		
+	
 	
 	@RequestMapping(value = "/getEmp", method = RequestMethod.GET)
 	@ResponseBody
