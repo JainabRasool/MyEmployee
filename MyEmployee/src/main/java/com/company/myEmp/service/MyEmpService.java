@@ -9,28 +9,28 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+
 import com.company.myEmp.Entity.MyEmpEntity;
 import com.company.myEmp.dto.MyEmpRequest;
-import com.company.myEmp.dto.MyEmpResponse;
 import com.company.myEmp.repo.MyEmpolyeeRepo;
+
 
 @Service
 public class MyEmpService {
 
+	MyEmpEntity empE=new MyEmpEntity();
+	
 	@Autowired
 	MyEmpRequest empReq;
 
 	@Autowired
-	MyEmpEntity empE;
-
-	@Autowired
-	MyEmpResponse empRes;
-
-	@Autowired
 	MyEmpolyeeRepo empRepo;
+	
 
 	public MyEmpEntity ReqDtoToEntity(@RequestBody MyEmpRequest empReq) {
-
+		
+		System.out.println("empReq.geteId()::"+empReq.geteId());
+		
 		empE.seteId(empReq.geteId());
 		empE.seteName(empReq.geteName());
 		empE.setePass(empReq.getePass());
